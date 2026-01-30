@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        long long x;
+        cin >> x;
+
+        int c2 = 0, c3 = 0;
+
+        for (; x % 2 == 0; x /= 2) c2++;
+        for (; x % 3 == 0; x /= 3) c3++;
+
+        if (x != 1 || c2 > c3) {
+            cout << -1 << '\n';
+        } else {
+            cout << (c3 - c2) + c3 << '\n';
+        }
+    }
+    return 0;
+}
